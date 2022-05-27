@@ -1,0 +1,38 @@
+<div>
+    <div class="container">
+        <div class="color-1">
+          <p>This background color change text-1</p>
+        </div>
+        <div class="color-2">
+          <p>This background color change text-2</p>
+        </div>
+    </div>
+</div>
+
+
+<h1>angular-dynamic-theme-example</h1>
+
+    <div class="block primary-background">Primary</div>  <br>
+    <div class="block secondary-background">Secondary</div>  <br>
+
+    Set Primary Color: 
+    <input type="text" [(ngModel)]="primaryColor"> <br>
+    
+    Set Secondary Color: 
+    <input type="text" [(ngModel)]="secondaryColor"> <br>
+
+    <button (click)="changeTheme(primaryColor,secondaryColor)">Save</button>
+
+
+
+  <div class="color-1-bg">
+    <p>My theam div</p>
+  </div>
+  <div class="color-2-bg">
+    <p>My theam div</p>
+  </div>
+  <div class="color-3-bg">
+    <p>My theam div</p>
+  </div>
+
+    <button (click)="myTheam('orange')">Change color</button>

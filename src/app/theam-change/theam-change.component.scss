@@ -1,0 +1,67 @@
+
+$custome-color:blue;
+
+  
+  .color-1{
+    color: $custome-color;
+  }
+  .color-2{
+    background-color: $custome-color;
+    color: white;
+  }
+
+  // color change porcess
+
+
+  :root {
+    --first-color: #488cff;
+    --second-color: #ffff8c;
+  } // we can also define variables with JavaScript
+  
+  div {
+    background-color: var(--first-color);
+    color: var(--second-color);
+  }
+
+
+
+
+$primary: var(--primary-color);
+$secondary: var(--secondary-color);
+
+
+$mxi: var(--abc-color);
+
+h1 {
+  color: $primary;
+}
+h1:hover {
+  color: $secondary;
+}
+
+.block {
+  width: 100px;
+  height: 100px;
+}
+
+.primary-background {
+  background-color: $primary;
+}
+
+.secondary-background {
+  background-color: $secondary;
+}
+
+
+
+.color-1-bg {
+  background-color: var(--abc-color);
+}
+.color-2-bg {
+  color: var(--abc-color);
+}
+
+.color-3-bg {
+  background-color: $mxi;
+}
+

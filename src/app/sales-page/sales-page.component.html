@@ -1,0 +1,754 @@
+<div class="position-relative">
+  <div class="iframe-overlay-1" [ngClass]="iframeShow === true ? 'd-none' : 'd-block'">
+    <div class="container frm-absolute">
+      <div class="bg-black py-3 px-3 rounded" (click)="iframeShowHide()">
+        <div class="text-end p-3 text-white">
+          <i class="bi bi-x"></i>
+        </div>
+        <div class="text-center w-100" style="--aspect-ratio: 16/9;">
+          <iframe
+            src="https://www.youtube.com/embed/JlvxDa7Sges?enablejsapi=1&amp;origin=http%3A%2F%2Fdorsin.angular.themesbrand.com&amp;widgetid=10"
+            width="780" height="450" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="change-color-setting-icon-1 p-2" (click)="iconShow()"
+    [ngClass]="show === true ? 'icon-position-true' : 'icon-position-false'">
+    <div class="rounded-circle px-1" id="loading">
+      <i class="bi bi-gear-fill"></i>
+    </div>
+  </div>
+  <div class="color-list px-3 py-4 border" [ngClass]="show === true ? 'd-none' : 'd-block'">
+    <div class="text-center">
+      <p><strong>Select your color</strong></p>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a class="color-circle-size color-1" href="javascript: void(0);" (click)="myTheam('#fb3e3e')"></a>
+      </div>
+      <div class="col">
+        <a class="color-circle-size color-2" href="javascript: void(0);" (click)="myTheam('#1bbc9d')"></a>
+      </div>
+      <div class="col">
+        <a class="color-circle-size color-3" href="javascript: void(0);" (click)="myTheam('#f85f89')"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a class="color-circle-size color-4" href="javascript: void(0);" (click)="myTheam('#00e6e6')"></a>
+      </div>
+      <div class="col">
+        <a class="color-circle-size color-5" href="javascript: void(0);" (click)="myTheam('#704fff')"></a>
+      </div>
+      <div class="col">
+        <a class="color-circle-size color-6" href="javascript: void(0);" (click)="myTheam('#2762da')"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a class="color-circle-size color-7" href="javascript: void(0);" (click)="myTheam('#f09105')"></a>
+      </div>
+      <div class="col">
+        <a class="color-circle-size color-8" href="javascript: void(0);" (click)="myTheam('#f6cb42')"></a>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>
+  <div class=" home-content postion position-relative ">
+    <div class="fixed-top bg-dark d-lg-none d-md-block d-sm-block py-2">
+      <div class="d-flex align-items-center container text-white ">
+        <div class="mx-2">
+          <a class="javascript: void(0) text-decoration-none text-white site-logo-txt">
+            <span><strong>DORSIN</strong></span>
+          </a>
+        </div>
+        <div class="mobile-menu " (click)="menuHideAndShow()">
+          <span><i class="bi bi-list"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="fixed-top d-lg-block d-md-none d-sm-none extra-sm-d-none "
+      [ngClass]="fixedHeader>=100 ? 'after-header-color' : 'int-header-color'" id="home">
+      <div class="d-flex  container text-white ">
+        <div class="p-2 ">
+          <a class="javascript: void(0) text-decoration-none text-white site-logo-txt">
+            <h5>DORSIN</h5>
+          </a>
+        </div>
+        <div class="">
+          <ul class="d-flex mx-5 mt-2 list-unstyled">
+            <li class="lg-menu-item "><a class="" href="#">Home</a></li>
+            <li class="lg-menu-item"><a class="" href="#service">Services</a></li>
+            <li class="lg-menu-item"><a href="#features">Features</a></li>
+            <li class="lg-menu-item"><a href="#pricing">Pricing</a></li>
+            <li class="lg-menu-item"><a href="#team">Team</a></li>
+            <li class="lg-menu-item"><a href="javascript: void(0);">Blog</a></li>
+            <li class="lg-menu-item"><a href="javascript: void(0);">Contact</a></li>
+          </ul>
+        </div>
+        <div class="try-btn-div ">
+          <button type="button" class="btn btn-custom rounded-pill px-4 py-2 try-btn btn-rise-up">Try it Free</button>
+        </div>
+      </div>
+    </div>
+    <div class="home-overlay position-absolute text-center">
+      <div class="container home-overlay-center-txt ">
+        <div>
+          <p class="text-white home-head">We help startups launch their <span class="d-lg-block"></span>products</p>
+        </div>
+        <div class="text-center home-sub-head my-4">
+          <p>Etiam sed.Interdum consequat proin vestibulum class at.</p>
+        </div>
+        <div>
+          <div><i class="bi bi-play-circle home-play-icon-custom " (click)="iframeShowHide()"></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="position-absolute  bottom-0">
+      <img class="w-100" src="/assets/images/bg-pattern.png">
+    </div>
+    <div class="position-fixed small-menu bg-dark py-3 d-lg-none" [ngClass]="menuShow === false ? 'd-none' : 'd-block'">
+      <div class="">
+        <ul class="list-unstyled  ">
+          <li class="lg-menu-item "><a class="" href="#">Home</a></li>
+          <li class="lg-menu-item"><a class="" href="#service">Services</a></li>
+          <li class="lg-menu-item"><a href="#features">Features</a></li>
+          <li class="lg-menu-item"><a href="#pricing">Pricing</a></li>
+          <li class="lg-menu-item"><a href="#team">Team</a></li>
+          <li class="lg-menu-item"><a href="javascript: void(0);">Blog</a></li>
+          <li class="lg-menu-item"><a href="javascript: void(0);">Contact</a></li>
+        </ul>
+      </div>
+      <div class="try-btn-div mx-3">
+        <button type="button" class="btn btn-custom rounded-pill px-4 py-2 try-btn btn-rise-up">Try it Free</button>
+      </div>
+    </div>
+  </div>
+  <div class="container py-5" id="service">
+    <div class="text-center">
+      <div class="">
+        <div>
+          <h3 class="">OUR SERVICES</h3>
+        </div>
+        <div class="small-line mx-auto"></div>
+        <div class="mt-4">
+          <p class="lg-w-50 sm-w-100 mx-auto text-muted">We craft digital, graphic and dimensional thinking, to create
+            category leading brand experiences that<span class="d-lg-block"></span>have meaning and add a value for our
+            clients.</p>
+        </div>
+      </div>
+      <div class="d-flex flex-lg-row flex-sm-column justify-content-center extra-small-scr-flow-col mt-5">
+        <div class="px-4 py-4 rise-up">
+          <div class="mb-4">
+            <span class="rounded-circle border section-icons"><i class="bi bi-gem"></i></span>
+          </div>
+          <div>
+            <h6><strong>Digital Design</strong></h6>
+          </div>
+          <div>
+            <p class="text-muted">Some quick example text to build on the card title and make up the bulk of the card's
+              content. Moltin gives you the platform.</p>
+          </div>
+        </div>
+        <div class="px-4 py-4 rise-up">
+          <div class="mb-4">
+            <span class="rounded-circle border section-icons"><i class="bi bi-tv"></i></span>
+          </div>
+          <div>
+            <h6><strong>Unlimited Colors</strong></h6>
+          </div>
+          <div>
+            <p class="text-muted">Credibly brand standards compliant users without extensible services. Anibh euismod
+              tincidunt ut laoreet.</p>
+          </div>
+        </div>
+        <div class="px-4 py-4 rise-up">
+          <div class="mb-4">
+            <span class="rounded-circle border section-icons"><i class="bi bi-piggy-bank"></i></span>
+          </div>
+          <div>
+            <h6><strong>Strategy Solutions</strong></h6>
+          </div>
+          <div>
+            <p class="text-muted">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
+              language ocean necessary regelialia.</p>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-lg-row flex-sm-column justify-content-center extra-small-scr-flow-col mt-5">
+        <div class="px-4 py-4 rise-up">
+          <div class="mb-4">
+            <span class="rounded-circle border section-icons"><i class="bi bi-flower2"></i></span>
+          </div>
+          <div>
+            <h6><strong>Digital Design</strong></h6>
+          </div>
+          <div>
+            <p class="text-muted">Some quick example text to build on the card title and make up the bulk of the card's
+              content. Moltin gives you the platform.</p>
+          </div>
+        </div>
+        <div class="px-4 py-4 rise-up">
+          <div class="mb-4">
+            <span class="rounded-circle border section-icons"><i class="bi bi-umbrella"></i></span>
+          </div>
+          <div>
+            <h6><strong>Unlimited Colors</strong></h6>
+          </div>
+          <div>
+            <p class="text-muted">Credibly brand standards compliant users without extensible services. Anibh euismod
+              tincidunt ut laoreet.</p>
+          </div>
+        </div>
+        <div class="px-4 py-4 rise-up">
+          <div class="mb-4">
+            <span class="rounded-circle border section-icons"><i class="bi bi-send"></i></span>
+          </div>
+          <div>
+            <h6><strong>Strategy Solutions</strong></h6>
+          </div>
+          <div>
+            <p class="text-muted">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
+              language ocean necessary regelialia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mobile-img-tot-div " id="features">
+    <div class="container">
+      <div class="d-flex flex-lg-row flex-sm-column extra-small-scr-flow-col">
+        <div class="col-lg-5  mobile-img-txt">
+          <div>
+            <h4>A digital web design studio creating modern & engaging online experiences</h4>
+          </div>
+          <div class="text-muted">
+            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A
+              small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+          </div>
+          <div class="text-muted ">
+            <ul class="list-bull-color px-4">
+              <li>We put a lot of effort in design.</li>
+              <li>The most important ingredient of successful website.</li>
+              <li>Sed ut perspiciatis unde omnis iste natus error sit.</li>
+              <li>Submit Your Orgnization.</li>
+            </ul>
+            <div>
+              <button type="button" class="btn btn-custom px-3 try-btn btn-rise-up">Learn More<i
+                  class="bi bi-arrow-right-short"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 text-center my-auto">
+          <img class="img-fluid w-75" src="assets/images/online-world.svg">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="build-your-dream postion position-relative ">
+    <div class="home-overlay position-absolute text-center">
+      <div class="container home-overlay-center-txt ">
+        <div>
+          <h2 class="h2-text text-white"><strong>Build your dream website today</strong></h2>
+        </div>
+        <div class="text-center home-sub-head my-4">
+          <p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers
+            ambushed her.</p>
+        </div>
+        <div class="">
+          <button type="button" class="btn btn-custom px-3  btn-rise-up bg-white py-2">View Plan & Pricing</button>
+        </div>
+      </div>
+    </div>
+    <div class="position-absolute  bottom-0">
+      <img class="w-100" src="/assets/images/bg-pattern.png">
+    </div>
+  </div>
+  <div class="container  py-5" id="pricing">
+    <div class="text-center">
+      <div class="">
+        <div>
+          <h3 class="">OUR PRICING</h3>
+        </div>
+        <div class="small-line mx-auto"></div>
+        <div class="mt-4">
+          <p class="lg-w-50 sm-w-100 mx-auto text-muted">Call to action pricing table is really crucial to your for your
+            business website. Make your bids stand-out <span class="d-lg-block"></span>with amazing options.</p>
+        </div>
+      </div>
+      <div
+        class="d-flex flex-lg-row flex-sm-column justify-content-center extra-small-scr-flow-col mt-5 pricing-tot-div">
+        <div class="col-lg-4 rise-up m-3 ">
+          <div class="pricing-box">
+            <div>
+              <h4>ECONOMY</h4>
+              <h1>$9.90</h1>
+              <h6 class="h6-txt text-muted">BILLING PER MONTH</h6>
+            </div>
+            <div class="small-line-1 mx-auto"></div>
+            <div class="margin-top-30">
+              <p>Bandwidth: <span class="common-color"><strong>1GB</strong></span></p>
+              <p>Onlinespace: <span class="common-color"><strong>50MB</strong></span></p>
+              <p>Support: <span class="common-color"><strong>No</strong></span></p>
+              <p><span class="common-color"><strong>1</strong></span> Domain</p>
+              <p><span class="common-color"><strong>No</strong></span> Hidden Fees</p>
+            </div>
+            <div class="margin-top-30">
+              <button type="button" class="btn btn-custom px-4 py-2 try-btn btn-rise-up">Join Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 rise-up m-3 ">
+          <div class="pricing-box">
+            <div>
+              <h4>DELUXE</h4>
+              <h1>$19.90</h1>
+              <h6 class="h6-txt text-muted">BILLING PER MONTH</h6>
+            </div>
+            <div class="small-line-1 mx-auto"></div>
+            <div class="margin-top-30">
+              <p>Bandwidth: <span class="common-color"><strong>10GB</strong></span></p>
+              <p>Onlinespace: <span class="common-color"><strong>500MB</strong></span></p>
+              <p>Support: <span class="common-color"><strong>Yes</strong></span></p>
+              <p><span class="common-color"><strong>10</strong></span> Domain</p>
+              <p><span class="common-color"><strong>No</strong></span> Hidden Fees</p>
+            </div>
+            <div class="margin-top-30">
+              <button type="button" class="btn btn-custom px-4 py-2 try-btn btn-rise-up">Join Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 rise-up m-3 ">
+          <div class="pricing-box">
+            <div>
+              <h4>ULTIMATE</h4>
+              <h1>$29.90</h1>
+              <h6 class="h6-txt text-muted">BILLING PER MONTH</h6>
+            </div>
+            <div class="small-line-1 mx-auto"></div>
+            <div class="margin-top-30">
+              <p>Bandwidth: <span class="common-color"><strong>100GB</strong></span></p>
+              <p>Onlinespace: <span class="common-color"><strong>2 GB</strong></span></p>
+              <p>Support: <span class="common-color"><strong>Yes</strong></span></p>
+              <p><span class="common-color"><strong>Unlimited</strong></span> Domain</p>
+              <p><span class="common-color"><strong>No</strong></span> Hidden Fees</p>
+            </div>
+            <div class="margin-top-30">
+              <button type="button" class="btn btn-custom px-4 py-2 try-btn btn-rise-up">Join Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container  py-5" id="team">
+    <div class="text-center">
+      <div class="">
+        <div>
+          <h3 class="">BEHIND THE PEOPLE</h3>
+        </div>
+        <div class="small-line mx-auto"></div>
+        <div class="mt-4">
+          <p class="lg-w-50 sm-w-100 mx-auto text-muted">It is a long established fact that a reader will be distracted
+            by the readable content of a page when<span class="d-lg-block"></span>looking at its layout.</p>
+        </div>
+      </div>
+      <div
+        class="d-flex flex-lg-row flex-sm-column justify-content-center extra-small-scr-flow-col mt-5 px-5 pricing-tot-div">
+        <div class="col-lg-3 rise-up m-3 ">
+          <div class="">
+            <div>
+              <img class="w-100 rounded" src="/assets/images/img-1.jpg">
+            </div>
+            <div class="pt-3">
+              <span class=""><strong>Frank Johnson</strong></span>
+              <p class="text-muted team-designation">CEO</p>
+            </div>
+            <div class="small-line-2 mx-auto"></div>
+          </div>
+        </div>
+        <div class="col-lg-3 rise-up m-3 ">
+          <div class="">
+            <div>
+              <img class="w-100 rounded" src="/assets/images/img-2.jpg">
+            </div>
+            <div class="pt-3">
+              <span class=""><strong>Elaine Stclair</strong></span>
+              <p class="text-muted team-designation">DESIGNER</p>
+            </div>
+            <div class="small-line-2 mx-auto"></div>
+          </div>
+        </div>
+        <div class="col-lg-3 rise-up m-3 ">
+          <div class="">
+            <div>
+              <img class="w-100 rounded" src="/assets/images/img-3.jpg">
+            </div>
+            <div class="pt-3">
+              <span class=""><strong>Wanda Arthur</strong></span>
+              <p class="text-muted team-designation">DEVELOPER</p>
+            </div>
+            <div class="small-line-2 mx-auto"></div>
+          </div>
+        </div>
+        <div class="col-lg-3 rise-up m-3 ">
+          <div class="">
+            <div>
+              <img class="w-100 rounded" src="/assets/images/img-4.jpg">
+            </div>
+            <div class="pt-3">
+              <span class=""><strong>Joshua Stemple</strong></span>
+              <p class="text-muted team-designation">MANAGER</p>
+            </div>
+            <div class="small-line-2 mx-auto"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="work-process-tot-div">
+    <div class="container  py-5">
+      <div class="text-center">
+        <div class="">
+          <div>
+            <h3 class="">WORK PROCESS</h3>
+          </div>
+          <div class="small-line mx-auto"></div>
+          <div class="mt-4">
+            <p class="lg-w-50 sm-w-100 mx-auto text-muted">In an ideal world this website wouldn’t exist, a client would
+              acknowledge the importance of having web<span class="d-lg-block"></span>copy before the design starts.</p>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-lg-row flex-sm-column extra-small-scr-flow-col text-center ">
+        <div class="col-lg-4 col-sm-12 mt-5  ">
+          <i class="bi bi-pen common-color work-process-icon "></i>
+          <p class="work-process-icon-p-txt mt-3">Tell us what you need</p>
+          <span class="text-muted">The Big Oxmox advised her not to do so.</span>
+        </div>
+        <div class="col-lg-4 col-sm-12 mt-5 position-relative  ">
+          <i class="bi bi-calendar2-range common-color work-process-icon"></i>
+          <p class="work-process-icon-p-txt mt-3">Get free quotes</p>
+          <span class="text-muted">Little Blind Text didn’t listen.</span>
+          <span class="position-absolute gree-free-quotes-icon-1 rounded-circle d-lg-block d-md-none d-sm-none "><i
+              class="bi bi-chevron-right"></i></span>
+          <div class="position-absolute dotted-line-1 d-lg-block d-md-none d-sm-none"></div>
+          <span class="position-absolute gree-free-quotes-icon-2 rounded-circle d-lg-block d-md-none d-sm-none"><i
+              class="bi bi-chevron-right"></i></span>
+          <div class="position-absolute dotted-line-2 d-lg-block d-md-none d-sm-none"></div>
+        </div>
+        <div class="col-lg-4 col-sm-12 mt-5 ">
+          <i class="bi bi-bullseye common-color work-process-icon"></i>
+          <p class="work-process-icon-p-txt mt-3">Deliver high quality product</p>
+          <span class="text-muted">When she reached the first hills.</span>
+        </div>
+      </div>
+      <div class="mt-5 text-center">
+        <button type="button" class="btn btn-custom px-3 py-2 try-btn btn-rise-up">Get Started<i
+            class="bi bi-arrow-right-short"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="container  py-5">
+    <div class="text-center">
+      <div class="">
+        <div>
+          <h3 class="">WHAT THEY'VE SAID</h3>
+        </div>
+        <div class="small-line mx-auto"></div>
+        <div class="mt-4">
+          <p class="lg-w-50 sm-w-100 mx-auto text-muted">The Big Oxmox advised her not to do so, because there were
+            thousands of bad Commas, wild Question <span class="d-lg-block"></span>Marks and devious Semikoli.</p>
+        </div>
+      </div>
+      <div
+        class="d-flex flex-lg-row flex-sm-column justify-content-center extra-small-scr-flow-col mt-5 pricing-tot-div">
+        <div class="col-lg-4 rise-up m-3 ">
+          <div class="pricing-box position-relative pb-4">
+            <div>
+              <p class="italic-txt">“I feel confident imposing change on myself. It's a lot more fun progressing than
+                looking back. That's why I need to throw curve balls.”</p>
+            </div>
+            <div class="position-absolute img-iconn">
+              <img class=" img-fluid img-thumbnail rounded-circle " src="/assets/images/user-2.jpg">
+            </div>
+          </div>
+          <div class="mt-3">
+            <p class="name-size">RUBEN REED -<span class="text-muted">Charleston</span></p>
+          </div>
+        </div>
+        <div class="col-lg-4 rise-up m-3 ">
+          <div class="pricing-box position-relative pb-4">
+            <div>
+              <p class="italic-txt">“I feel confident imposing change on myself. It's a lot more fun progressing than
+                looking back. That's why I need to throw curve balls.”</p>
+            </div>
+            <div class="position-absolute img-iconn">
+              <img class=" img-fluid img-thumbnail rounded-circle " src="/assets/images/user-1.jpg">
+            </div>
+          </div>
+          <div class="mt-3">
+            <p class="name-size">MICHAEL P. HOWLETT -<span class="text-muted">Worcester</span></p>
+          </div>
+        </div>
+        <div class="col-lg-4 rise-up m-3 ">
+          <div class="pricing-box position-relative pb-4">
+            <div>
+              <p class="italic-txt">“I feel confident imposing change on myself. It's a lot more fun progressing than
+                looking back. That's why I need to throw curve balls.”</p>
+            </div>
+            <div class="position-absolute img-iconn">
+              <img class=" img-fluid img-thumbnail rounded-circle " src="/assets/images/user-3.jpg">
+            </div>
+          </div>
+          <div class="mt-3">
+            <p class="name-size">THERESA D. SINCLAIR -<span class="text-muted">Lynchburg</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="build-your-dream postion position-relative ">
+    <div class="home-overlay position-absolute text-center">
+      <div class="container home-overlay-center-txt ">
+        <div>
+          <h2 class="h2-text text-white"><strong>Let's Get Started</strong></h2>
+        </div>
+        <div class="small-line-3 mx-auto"></div>
+        <div class="mt-4">
+          <p class="lg-w-50 sm-w-100 mx-auto text-white">Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the <span class="d-lg-block"></span>blind texts.</p>
+        </div>
+        <div class="mt-5">
+          <button type="button" class="btn btn-custom px-3 py-2 btn-rise-up bg-white">Get Started<i
+              class="bi bi-arrow-right-short"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="position-absolute  bottom-0">
+      <img class="w-100" src="/assets/images/bg-pattern-light.png">
+    </div>
+  </div>
+  <div class="work-process-tot-div">
+    <div class="container  py-5">
+      <div class="text-center">
+        <div class="">
+          <div>
+            <h3 class="">BLOG</h3>
+          </div>
+          <div class="small-line mx-auto"></div>
+          <div class="mt-4">
+            <p class="lg-w-50 sm-w-100 mx-auto text-muted">Separated they live in Bookmarksgrove right at the coast of
+              the Semantics, a large language ocean class<span class="d-lg-block"></span>at a euismod mus luctus quam.
+            </p>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-lg-row flex-sm-column justify-content-center extra-small-scr-flow-col mt-5 px-5 pricing-tot-div">
+          <div class="col-lg-4 rise-up m-3 ">
+            <div class="">
+              <div>
+                <img class="w-100 " src="/assets/images/img-6.jpg">
+              </div>
+            </div>
+            <div class="text-start mt-3">
+              <p class="text-muted my-2">UI & UX Design</p>
+              <p class=" my-1"><a href="#" class="text-decoration-none blog-name-a-tag">Doing a cross country road
+                  trip</a></p>
+              <span class="text-muted">She packed her seven versalia, put her initial into the belt and made herself on
+                the way..</span>
+              <p class="my-3"><a href="#" class="text-decoration-none read-more-link">Read More<i
+                    class="bi bi-arrow-right-short"></i></a></p>
+            </div>
+          </div>
+          <div class="col-lg-4 rise-up m-3 ">
+            <div class="">
+              <div>
+                <img class="w-100 " src="/assets/images/img-7.jpg">
+              </div>
+              <div class="text-start mt-3">
+                <p class="text-muted my-2">Digital Marketing</p>
+                <p class=" my-1"><a href="#" class="text-decoration-none blog-name-a-tag">New exhibition at our
+                    Museum</a></p>
+                <span class="text-muted">Pityful a rethoric question ran over her cheek, then she continued her
+                  way.</span>
+                <p class="my-3"><a href="#" class="text-decoration-none read-more-link">Read More<i
+                      class="bi bi-arrow-right-short"></i></a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 rise-up m-3 ">
+            <div class="">
+              <div>
+                <img class="w-100 " src="/assets/images/img-8.jpg">
+              </div>
+              <div class="text-start mt-3">
+                <p class="text-muted my-2">Travelling</p>
+                <p class=" my-1"><a href="#" class="text-decoration-none blog-name-a-tag">Why are so many people..</a>
+                </p>
+                <span class="text-muted">Far far away, behind the word mountains, far from the countries Vokalia and
+                  Consonantia.</span>
+                <p class="my-3"><a href="#" class="text-decoration-none read-more-link">Read More<i
+                      class="bi bi-arrow-right-short"></i></a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container  py-5">
+    <div class="text-center mb-5 py-4">
+      <div class="">
+        <div>
+          <h3 class="">GET IN TOUCH</h3>
+        </div>
+        <div class="small-line mx-auto"></div>
+        <div class="mt-4">
+          <p class="lg-w-50 sm-w-100 mx-auto text-muted">We thrive when coming up with innovative ideas but also
+            understand that a smart concept should be <span class="d-lg-block"></span>supported with measurable results.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex extra-small-scr-flow-col-1  my-4 ">
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="address-text my-4">
+          <h6 class="text-dark">Office Address 1:</h6>
+          <span class="text-muted">4461 Cedar Street Moro, AR 72368</span>
+        </div>
+        <div class="address-text my-4">
+          <h6 class="text-dark">Office Address 2:</h6>
+          <span class="text-muted">2467 Swick Hill Street<span class="d-block">New Orleans, LA 70171</span> </span>
+        </div>
+        <div class="address-text my-4">
+          <h6 class="text-dark">Working Hours:</h6>
+          <span class="text-muted">9:00AM To 6:00PM</span>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-12 col-sm-12">
+        <form>
+          <div class="d-flex extra-small-scr-flow-col-1 ">
+            <div class="col  mr-custom-input">
+              <input class="form-control form-control-sm py-3 px-4 shadow-none" type="text" placeholder="Your name*">
+            </div>
+            <div class="col ml-custom-input">
+              <input class="form-control form-control-sm py-3 px-4 shadow-none" type="text" placeholder="Your email*">
+            </div>
+          </div>
+          <div class="my-4">
+            <input class="form-control form-control-sm py-3 px-4 shadow-none" type="text" placeholder="Your Subject...">
+          </div>
+          <div>
+            <textarea class="form-control form-control-sm py-3 px-4 shadow-none" id="exampleFormControlTextarea1"
+              rows="4" placeholder="Your message..."></textarea>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class=" text-end">
+      <button type="button" class="btn btn-custom px-3 py-2 try-btn btn-rise-up">Send Message</button>
+    </div>
+  </div>
+  <div class="fb-icon-tot-div">
+    <div class="container  ">
+      <div
+        class="d-flex flex-lg-row flex-md-column flex-sm-column extra-small-scr-flow-col text-center  align-items-center">
+        <div class="col-lg-6 col-md-13 col-sm-12 ">
+          <div
+            class="d-flex justify-content-lg-start justify-content-md-center justify-content-sm-center extra-small-justify-center  mb-3">
+            <div class="rounded-circle icon-circle-common">
+              <i class="bi bi-facebook"></i>
+            </div>
+            <div class="icon-circle-common">
+              <i class="bi bi-twitter"></i>
+            </div>
+            <div class="icon-circle-common">
+              <i class="bi bi-linkedin"></i>
+            </div>
+            <div class="icon-circle-common">
+              <i class="bi bi-google"></i>
+            </div>
+            <div class="icon-circle-common">
+              <i class="bi bi-globe"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-13 col-sm-12  text-lg-center">
+          <p class=""><i class="bi bi-telephone"></i>&#160;&#160;<strong>+91 123 4556 789</strong></p>
+        </div>
+        <div class="col-lg-3 col-md-13 col-sm-12  text-lg-end">
+          <p class=""><i class="bi bi-envelope-open"></i>&#160;&#160;<strong>Support@info.com</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 bg-dark">
+    <div class="container py-3">
+      <div class="d-flex flex-lg-row flex-md-column flex-sm-column extra-small-scr-flow-col ">
+        <div class="col-lg-3 col-md-12 col-sm-12 text-white ">
+          <p class="footer-head">DORSIN</p>
+          <ul class="text-muted footer-ul-item">
+            <li><a class="javascript: void(0);">Home</a></li>
+            <li><a class="javascript: void(0);">About us</a></li>
+            <li><a class="javascript: void(0);">Careers</a></li>
+            <li><a class="javascript: void(0);">Contact us</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 text-white ">
+          <p class="footer-head">Information</p>
+          <ul class="text-muted footer-ul-item">
+            <li><a class="javascript: void(0);">Terms & Condition</a></li>
+            <li><a class="javascript: void(0);">About us</a></li>
+            <li><a class="javascript: void(0);">Jobs</a></li>
+            <li><a class="javascript: void(0);">Bookmarks</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 text-white ">
+          <p class="footer-head">Support</p>
+          <ul class="text-muted footer-ul-item">
+            <li><a class="javascript: void(0);">FAQ</a></li>
+            <li><a class="javascript: void(0);">About us</a></li>
+            <li><a class="javascript: void(0);">Contact</a></li>
+            <li><a class="javascript: void(0);">Disscusion</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 text-white ">
+          <p class="footer-head">Subscribe</p>
+          <p class="text-muted">In an ideal world this text wouldn’t exist, a client would acknowledge the importance of
+            having web copy before the design starts.</p>
+          <div class="col mb-3 text-white">
+            <div class="input-group">
+              <input type="text" class="form-control search-bg-color text-white shadow-none border-0"
+                id="validationTooltipUsername" placeholder="Email" aria-describedby="validationTooltipUsernamePrepend"
+                required>
+              <div class="input-group-prepend ">
+                <span class="input-group-text text-muted search-bg-color border-0"
+                  id="validationTooltipUsernamePrepend"><i class="bi bi-send"></i></span>
+              </div>
+              <div class="invalid-tooltip">
+                Please fill in this field.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-end-bg py-2">
+    <div class="container pt-3 mb-3">
+      <div class="d-flex flex-lg-row flex-md-column flex-sm-column extra-small-scr-flow-col text-muted text-center">
+        <div class="col text-lg-start ">
+          <p>2022 © Dorsin - Themesbrand</p>
+        </div>
+        <div class="col text-lg-end ">
+          <div>
+            <img class="img-fluid w-25" src="/assets/images/payment.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
